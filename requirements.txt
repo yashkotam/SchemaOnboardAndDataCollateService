@@ -1,0 +1,17 @@
+# DO NOT include azure-functions-worker in this file
+# The Python Worker is managed by Azure Functions platform
+# Manually managing azure-functions-worker may cause unexpected issues
+
+azure-functions
+azure-identity
+azure-keyvault-secrets
+azure-cosmos
+psycopg2-binary
+transformers
+pyodbc
+pandas
+pandasql
+# for windows use below for python 3.11
+# https://download.pytorch.org/whl/cpu/torch-2.3.1%2Bcpu-cp311-cp311-win_amd64.whl
+# for linux use below for python 3.11
+https://download.pytorch.org/whl/cpu/torch-2.3.1%2Bcpu-cp311-cp311-linux_x86_64.whl
