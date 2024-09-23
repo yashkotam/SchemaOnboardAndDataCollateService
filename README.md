@@ -54,7 +54,9 @@ sample body :
 
 Response will return relevant data by querying required tables collating data and returns data in JSON String
 
+
 **NOTE**
+
 For testing APIs we can use Function App Test Code + Test Playground once Function App is deployed.
 For accessing APIs from internet we might require additional Security Credentials. Check : [Securing Azure Functions](https://learn.microsoft.com/en-us/azure/azure-functions/security-concepts)
 
