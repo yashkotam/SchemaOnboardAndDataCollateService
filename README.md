@@ -24,7 +24,7 @@ Service which onboards all tables data schema and creates and store vector embed
 
    
 ## Function App REST APIs
-1. /OnboardSqlSchema POST
+1. /OnboardSchema POST
 
   sample body 1 :
   ``{
