@@ -9,7 +9,7 @@ from openAIUtils import instructions
 
 app = func.FunctionApp(http_auth_level=func.AuthLevel.FUNCTION)
 
-@app.route(route="OnboardSqlSchema")
+@app.route(route="OnboardSchema")
 def OnboardSqlSchema(req: func.HttpRequest) -> func.HttpResponse:
     
     try:
