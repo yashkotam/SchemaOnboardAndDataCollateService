@@ -118,7 +118,13 @@ def GetData(req: func.HttpRequest) -> func.HttpResponse:
             if(result):
                 break
             attempt = attempt + 1    
-        
+
+        if not result:
+            return func.HttpResponse(
+                "error fetching data",
+                status_code=500
+            ) 
+            
         return func.HttpResponse(
                 "response to query : %s" % (json.dumps(result, indent=4, default=str)),
                 status_code=200
