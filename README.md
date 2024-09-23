@@ -4,9 +4,9 @@ Service which onboards all tables data schema and creates and store vector embed
 **Prerequisites to Delpoy the Service**
 
 1. Function App Account to deploy Function Apps.
-2. Azure Key Vault. Add role "Key Vault Secrets Use" to Function App's Managed Identity.
-3. Cosmos Db Postgres to store Schema data along with Embeddings. Make sure to install pgvector extension. check : [Enable Pgvector Extension](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/how-to-use-pgvector#enable-extension) Also current code uses user "citus" and database "citus" as per [documentation](https://learn.microsoft.com/en-us/azure/cosmos-db/postgresql/introduction#always-the-latest-postgresql-features). We use Account Key based Authentication to connect to Postgres. Hence we use Key Vault to store and retrieve Account Key as Secret. Observed issues with Managed Identity. Will need to migrate to Managed Identity in future.
-4. Azure Open AI with Chat Completion type. Add "Azure AI Developer" role to Function App's Managed Identity.
+2. Azure Key Vault. Add role "Key Vault Secrets User" to Function App's Managed Identity. Update the Key Vault URI in "keyVaultUtils.py".
+3. Cosmos Db Postgres to store Schema data along with Embeddings. Make sure to install pgvector extension. check : [Enable Pgvector Extension](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/how-to-use-pgvector#enable-extension) Also current code uses user "citus" and database "citus" as per [documentation](https://learn.microsoft.com/en-us/azure/cosmos-db/postgresql/introduction#always-the-latest-postgresql-features). We use Account Key based Authentication to connect to Postgres. Hence we use Key Vault to store and retrieve Account Key as Secret. Observed issues with Managed Identity. Will need to migrate to Managed Identity in future. Update Postgres host in "postgresUtils.py".
+4. Azure Open AI with Chat Completion type. Add "Azure AI Developer" role to Function App's Managed Identity. Update Open AI Endpoint in "openAIUtils.py".
 5. Function App uses Managed Identity to read data from respective Databases. So before Onboarding and fetching data via APIs mentioned below we need to add relevant roles for Databases for Function App's Managed Identity.
    
    a. For Azure SQL check :
